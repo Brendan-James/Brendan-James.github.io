@@ -10,7 +10,7 @@
       goose.style.transform = "scaleX(-1)"
     }
     if(x>0){
-   setTimeout(boogey,5,x-1)
+   setTimeout(boogey,20,x-1)
    }
   }
   
@@ -25,7 +25,7 @@
   );
   target = Math.random()*(width-10);
   if(Math.random()<0.05){
-    boogey(1000);
+    boogey(250);
   }
   else{
     setTimeout(retarget,5000+5000*Math.random());
