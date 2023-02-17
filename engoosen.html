@@ -16,7 +16,8 @@
     if(distX<-5){
         goose.style.transform = "scaleX(-1)"
     }
-    goose.style.left =  Math.round(gooseX-10+distX/500)+"px";
+    
+    goose.style.left =  Math.round(gooseX-10+Math.sign(distX)*Math.sqrt(Math.abs(distX))/10)+"px";
   }
   
   var appear = function(){
