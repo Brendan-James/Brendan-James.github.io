@@ -17,7 +17,7 @@
     if(distX<-5){
         goose.style.transform = "scaleX(-1)"
     }
-    goose.style.left =  Math.round(gooseX-53+speed)+"px";
+    goose.style.left =  Math.round(gooseX-53+distX*speed)+"px";
   }
   
   var appear = function(){
@@ -34,8 +34,8 @@
   goose.id = "goose";
   goose.src = "https://brendan-james.github.io/goose.webp"
   goose.style.display="block";
-  goose.style.left = userX-100+"px";
-  goose.style.top = userY-53+"px";
+  goose.style.left = "0px";
+  goose.style.bottom = "0px";
   goose.style.position = "absolute";
   goose.height = 197;
   goose.width = 106;
