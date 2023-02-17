@@ -1,6 +1,5 @@
 <script>
   var target = 0;
-  
   var boogey = function(x){
    const goose = document.getElementById("goose");
    if(x%2==1){
@@ -13,7 +12,9 @@
    setTimeout(boogey,100,x-1)
    }
   }
-  
+  var dancen = function(){
+    boogey(50);
+  }
   var retarget = function()
 {
     const width = Math.max(
@@ -44,16 +45,6 @@
       goose.style.left =  Math.round(gooseX-10+Math.sign(distX))+"px";
     }
   }
-  
-  var appear = function(){
-    document.getElementById("goose").style.left = "-200px"
-    document.getElementById("goose").style.display = "block";
-  }
-  
-  var vanish = function(){
-    document.getElementById("goose").style.display = "none";
-    setTimeout(appear,20000);
-  }
   var spawn = function(){
   const goose = document.createElement("img");
   goose.id = "goose";
@@ -64,7 +55,7 @@
   goose.style.position = "absolute";
   goose.height = 40;
   goose.width = 20;
-  goose.onclick = vanish;
+  goose.onclick = dancen;
   document.body.appendChild(goose);
   retarget();
   setInterval(move,5);
