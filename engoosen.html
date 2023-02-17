@@ -1,15 +1,20 @@
 <script>
-  var userX;
-  var userY;
-  var mouseTrap = function(e)
+  var target = 0;
+  var retarget = function()
 {
-    // get the user's location
-    userX = e.clientX;
+    const width = Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth
+  );
+  target = Math.random()*width;
 }
   var move = function(){
     const goose = document.getElementById("goose");
     const gooseX = parseInt(goose.style.left) + 10;
-    const distX = userX - gooseX;
+    const distX = target - gooseX;
     if(distX>5){
         goose.style.transform = "scaleX(1)"
     }
@@ -45,5 +50,5 @@
   }
   
   setTimeout(spawn,1000);
-  document.onmousemove = mouseTrap;
+  setInterval(retarget,2000);
   </script>
