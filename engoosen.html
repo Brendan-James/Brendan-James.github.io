@@ -1,6 +1,41 @@
-<script> 
+<script>
+  var userX;
+  var userY;
+  var mouseTrap = function(e)
+{
+    // get the user's location
+    userX = e.clientX;
+}
+  var move = function(){
+    const goose = document.getElementById("goose");
+    const gooseX = parseInt(goose.style.left) + 53;
+    const distX = userX - gooseX;
+    const speed = Math.sqrt(distX)/5;
+    goose.style.left =  Math.round(gooseX-53+speed)+"px";
+  }
+  
+  var appear = function(){
+    document.getElementById("goose").style.left = "-200px"
+    document.getElementById("goose").style.display = "block";
+  }
+  
+  var vanish = function(){
+    document.getElementById("goose").style.display = "none";
+    setTimeout(appear,20000);
+  }
+  var spawn = function(){
   const goose = document.createElement("img");
   goose.id = "goose";
   goose.src = "https://static.wikia.nocookie.net/untitled-goose-game/images/e/ee/51hnmg4o53o2.png/revision/latest?cb=20191108143703"
+  goose.style.display="block";
+  goose.style.left = userX-100+"px";
+  goose.style.top = userY-53+"px";
+  goose.height = 197;
+  goose.width = 106;
   document.getElementById("interface").appendChild(goose);
+  setInterval(move,1);
+  }
+  
+  setTimeout(spawn,10);
+  document.onmousemove = mouseTrap;
   </script>
