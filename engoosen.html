@@ -10,7 +10,7 @@
       goose.style.transform = "scaleX(-1)"
     }
     if(x>0){
-   setTimeout(boogey,1,x-1)
+   setTimeout(boogey,5,x-1)
    }
   }
   
@@ -24,9 +24,11 @@
     document.documentElement.clientWidth
   );
   target = Math.random()*(width-10);
-  setTimeout(retarget,5000+5000*Math.random());
   if(Math.random()<0.05){
-    boogey(5000);
+    boogey(1000);
+  }
+  else{
+    setTimeout(retarget,5000+5000*Math.random());
   }
 }
   var move = function(){
