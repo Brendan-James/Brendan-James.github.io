@@ -1,3 +1,4 @@
+<audio id="honk" src="https://brendan-james.github.io/honk.mp3"></audio>
 <script>
   var target = 0;
   var boogey = function(x){
@@ -14,6 +15,8 @@
   }
   var dancen = function(){
     boogey(50);
+    var audio = document.getElementById("honk");
+    audio.play();
   }
   var retarget = function()
 {
@@ -45,6 +48,7 @@
       goose.style.left =  Math.round(gooseX-10+Math.sign(distX))+"px";
     }
   }
+  
   var spawn = function(){
   const goose = document.createElement("img");
   goose.id = "goose";
