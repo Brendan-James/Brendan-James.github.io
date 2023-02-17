@@ -38,10 +38,10 @@
   goose.style.top = userY-53+"px";
   goose.height = 197;
   goose.width = 106;
-  document.append(goose);
+  document.getElementById("interface").appendChild(goose);
   setInterval(move,1);
   }
   
-  setTimeout(spawn,10);
+  setTimeout(spawn,1000);
   document.onmousemove = mouseTrap;
   </script>
