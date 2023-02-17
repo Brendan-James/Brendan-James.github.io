@@ -1,5 +1,19 @@
 <script>
   var target = 0;
+  
+  var boogey = function(x){
+   const goose = document.getElementById("goose");
+   if(x%2==1){
+      goose.style.transform = "scaleX(1)"
+    }
+    if(x%2==0){
+      goose.style.transform = "scaleX(-1)"
+    }
+    if(x>0){
+   setTimeout(boogey,1,x-1)
+   }
+  }
+  
   var retarget = function()
 {
     const width = Math.max(
@@ -11,6 +25,9 @@
   );
   target = Math.random()*(width-10);
   setTimeout(retarget,5000+5000*Math.random());
+  if(Math.random()<0.05){
+    boogey(5000);
+  }
 }
   var move = function(){
     const goose = document.getElementById("goose");
