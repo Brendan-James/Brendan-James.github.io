@@ -11,6 +11,12 @@
     const gooseX = parseInt(goose.style.left) + 53;
     const distX = userX - gooseX;
     const speed = Math.sqrt(distX)/5;
+    if(distX>5){
+        goose.style.transform = "scaleX(1)"
+    }
+    if(distX<-5){
+        goose.style.transform = "scaleX(-1)"
+    }
     goose.style.left =  Math.round(gooseX-53+speed)+"px";
   }
   
