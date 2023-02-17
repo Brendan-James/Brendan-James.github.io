@@ -8,7 +8,7 @@
 }
   var move = function(){
     const goose = document.getElementById("goose");
-    const gooseX = parseInt(goose.style.left) + 53;
+    const gooseX = parseInt(goose.style.left) + 10;
     const distX = userX - gooseX;
     if(distX>5){
         goose.style.transform = "scaleX(1)"
@@ -16,7 +16,7 @@
     if(distX<-5){
         goose.style.transform = "scaleX(-1)"
     }
-    goose.style.left =  Math.round(gooseX-53+distX/100)+"px";
+    goose.style.left =  Math.round(gooseX-10+distX/100)+"px";
   }
   
   var appear = function(){
@@ -36,8 +36,8 @@
   goose.style.left = "0px";
   goose.style.bottom = "0px";
   goose.style.position = "absolute";
-  goose.height = 197;
-  goose.width = 106;
+  goose.height = 40;
+  goose.width = 20;
   goose.onclick = vanish;
   document.body.appendChild(goose);
   setInterval(move,1);
