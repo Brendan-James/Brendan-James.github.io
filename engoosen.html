@@ -23,13 +23,13 @@
     document.documentElement.offsetWidth,
     document.documentElement.clientWidth
   );
-  target = Math.random()*(width-10);
   if(Math.random()<0.05){
     boogey(50);
   }
   else{
-    setTimeout(retarget,5000+5000*Math.random());
+    target = Math.random()*(width-10);
   }
+  setTimeout(retarget,5000+5000*Math.random());
 }
   var move = function(){
     const goose = document.getElementById("goose");
