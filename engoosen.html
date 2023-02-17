@@ -9,7 +9,8 @@
     document.documentElement.offsetWidth,
     document.documentElement.clientWidth
   );
-  target = Math.random()*width;
+  target = Math.random()*(width-10);
+  setTimeout(retarget,5000+5000*Math.random());
 }
   var move = function(){
     const goose = document.getElementById("goose");
@@ -46,9 +47,9 @@
   goose.width = 20;
   goose.onclick = vanish;
   document.body.appendChild(goose);
+  retarget();
   setInterval(move,5);
   }
   
   setTimeout(spawn,1000);
-  setInterval(retarget,10000);
   </script>
